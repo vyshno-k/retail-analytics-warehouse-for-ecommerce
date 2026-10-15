@@ -1,0 +1,27 @@
+name: ecommerce_analytics
+version: "1.0.0"
+config-version: 2
+profile: ecommerce_analytics
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+vars:
+  incremental_lookback_days: 3
+
+seeds:
+  ecommerce_analytics:
+    +schema: raw
+    raw_orders:
+      +column_types: {order_ts: timestamp}
+
+models:
+  ecommerce_analytics:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

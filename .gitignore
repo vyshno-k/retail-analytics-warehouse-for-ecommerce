@@ -1,0 +1,14 @@
+# dbt artifacts
+target/
+dbt_packages/
+logs/
+profiles.yml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated dashboard
+dashboard/dashboard.html

@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: fct_orders
+    description: One row per order with recognised revenue. Incremental, partitioned by order_date.
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: net_revenue
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0}
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+      - name: customer_segment
+        tests:
+          - accepted_values: {values: ['vip', 'loyal', 'regular', 'no_purchase']}
+  - name: fct_daily_revenue
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [order_date, channel]
+    columns:
+      - name: return_rate
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0, max_value: 1}

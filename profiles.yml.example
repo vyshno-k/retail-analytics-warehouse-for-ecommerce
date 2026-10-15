@@ -1,0 +1,12 @@
+# Copy to ~/.dbt/profiles.yml and edit project/location.
+# Auth: run `gcloud auth application-default login` first.
+ecommerce_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: YOUR_GCP_PROJECT_ID
+      dataset: dbt_dev
+      location: US                # keep US for the BigQuery sandbox; must match where datasets are created
+      threads: 4
