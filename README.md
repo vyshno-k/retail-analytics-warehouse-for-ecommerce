@@ -1,4 +1,6 @@
-# E-commerce Analytics Platform: dbt + BigQuery
+# Retail Analytics Warehouse for Ecommerce
+
+An end-to-end dbt and BigQuery analytics warehouse for ecommerce.
 
 End-to-end analytics engineering project: raw data -> tested dbt models -> BigQuery marts -> Looker Studio dashboard.
 

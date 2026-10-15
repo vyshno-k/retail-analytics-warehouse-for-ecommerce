@@ -30,7 +30,7 @@ gcloud config set project YOUR_PROJECT_ID
 ```
 
 ## 4. Create a virtual environment and install dbt
-Unzip the project, open a terminal in the folder `dbt-bigquery-ecommerce`:
+Unzip the project, open a terminal in the folder `retail-analytics-warehouse-for-ecommerce`:
 ```bash
 python -m venv .venv
 # Mac/Linux:

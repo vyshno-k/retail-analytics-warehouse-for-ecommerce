@@ -204,9 +204,9 @@ def render(data, source):
     .heat th,.heat td{padding:6px 8px;text-align:center;border:1px solid var(--gr)}
     .heat td{color:#0b1220}
     @media(max-width:520px){.grid2{grid-template-columns:1fr}}"""
-    return f"""<!doctype html><html><head><meta charset="utf-8"><title>E-commerce Analytics Dashboard</title>
+    return f"""<!doctype html><html><head><meta charset="utf-8"><title>Retail Analytics Warehouse for Ecommerce</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"><style>{css}</style></head><body><div class="wrap">
-<h1>E-commerce Analytics Dashboard</h1><div class="sub">Source: {html.escape(source)} &middot; generated {datetime.now():%Y-%m-%d %H:%M} &middot; built from dbt marts</div>
+<h1>Retail Analytics Warehouse for Ecommerce</h1><div class="sub">Source: {html.escape(source)} &middot; generated {datetime.now():%Y-%m-%d %H:%M} &middot; built from dbt marts</div>
 <div class="kpis">{kpi_html}</div>
 <div class="grid2">
  <div class="card"><h2>Revenue by channel (7-day moving average)</h2>{line_chart(dates, series)}<div>{legend}</div></div>
